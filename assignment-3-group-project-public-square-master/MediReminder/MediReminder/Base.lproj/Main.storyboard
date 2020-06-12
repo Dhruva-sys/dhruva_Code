@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rfJ-jn-59b">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MediReminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medicine" translatesAutoresizingMaskIntoConstraints="NO" id="A9o-Og-dsA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfD-2r-Qdy">
+                                <rect key="frame" x="25" y="298.5" width="325" height="54"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="15" maxX="10" maxY="15"/>
+                                <state key="normal" title="Upcoming Reminders"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIz-Hy-4hO">
+                                <rect key="frame" x="25" y="224.5" width="325" height="54"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="15" maxX="10" maxY="15"/>
+                                <state key="normal" title="View Medical List"/>
+                                <connections>
+                                    <segue destination="QYB-P2-IuS" kind="show" id="xHg-wU-7WG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="A9o-Og-dsA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2bt-NZ-M8r"/>
+                            <constraint firstItem="rfD-2r-Qdy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="3c8-TU-Yyj"/>
+                            <constraint firstAttribute="trailing" secondItem="qIz-Hy-4hO" secondAttribute="trailing" constant="25" id="NTA-Y2-wOd"/>
+                            <constraint firstAttribute="trailing" secondItem="rfD-2r-Qdy" secondAttribute="trailing" constant="25" id="Nax-CE-YFD"/>
+                            <constraint firstItem="A9o-Og-dsA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VLJ-X3-WeP"/>
+                            <constraint firstItem="A9o-Og-dsA" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="dyw-3d-4tF"/>
+                            <constraint firstItem="qIz-Hy-4hO" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-60" id="e3E-dT-L0f"/>
+                            <constraint firstItem="qIz-Hy-4hO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="gnt-uD-QBq"/>
+                            <constraint firstItem="rfD-2r-Qdy" firstAttribute="top" secondItem="qIz-Hy-4hO" secondAttribute="bottom" constant="20" id="hzD-6D-GY7"/>
+                            <constraint firstItem="A9o-Og-dsA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="km8-X0-iqU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="never" id="eOI-1o-Wbn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047" y="118"/>
+        </scene>
+        <!--Listing-->
+        <scene sceneID="peO-CO-Y3N">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="QYB-P2-IuS" customClass="MediListTableViewController" customModule="MediReminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rYe-FD-sS1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThisCell" id="anL-Ue-0Vk">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="anL-Ue-0Vk" id="jLf-tZ-xV0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QYB-P2-IuS" id="arj-y2-8H4"/>
+                            <outlet property="delegate" destination="QYB-P2-IuS" id="weQ-pf-27M"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Listing" largeTitleDisplayMode="never" id="2jC-TN-Zfx">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="sTh-m2-UKD">
+                            <connections>
+                                <segue destination="AJT-SE-YCR" kind="show" id="yb1-hM-DJ7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="QKL-8k-1sm" kind="show" identifier="showMedi" id="S53-zL-U0e"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C4b-IR-udX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1872" y="118"/>
+        </scene>
+        <!--Create-->
+        <scene sceneID="uT5-Et-sah">
+            <objects>
+                <viewController providesPresentationContextTransitionStyle="YES" id="AJT-SE-YCR" customClass="AddMediList" customModule="MediReminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5RQ-uQ-mwH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDS-ig-TnX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Medication Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AkC-5p-OjE">
+                                        <rect key="frame" x="20" y="20" width="335" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y1L-uz-z2x">
+                                        <rect key="frame" x="15" y="48" width="345" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="AJT-SE-YCR" id="epm-bf-oPW"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Days of Week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uX2-Bn-Yka">
+                                        <rect key="frame" x="20" y="112" width="335" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="04X-5f-BRy">
+                                        <rect key="frame" x="20" y="151" width="335" height="126"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ty4-Y9-6tI">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="24"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TcC-fI-LWq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="24"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                                        <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                        <state key="normal" title="  Monday" image="rectangle" catalog="system">
+                                                            <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="selected" image="checkmark.rectangle.fill" catalog="system">
+                                                            <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="SelectDays:" destination="AJT-SE-YCR" eventType="touchUpInside" id="7vM-bC-6hi"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPz-Ll-5h5">
+                                                        <rect key="frame" x="171.5" y="0.0" width="163.5" height="24"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                                        <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                        <state key="normal" title="  Friday" image="rectangle" catalog="system">
+                                                            <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="selected" image="checkmark.rectangle.fill" catalog="system">
+                                                            <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="SelectDays:" destination="AJT-SE-YCR" eventType="touchUpInside" id="byb-vV-j96"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bwx-MP-dDX">
+                                                <rect key="frame" x="0.0" y="34" width="335" height="24"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hW-KH-io5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="24"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                                        <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                        <state key="normal" title="  Tuesday" image="rectangle" catalog="system">
+                                                            <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="selected" image="checkmark.rectangle.fill" catalog="system">
+                                                            <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="SelectDays:" destination="AJT-SE-YCR" eventType="touchUpInside" id="I0E-9m-GbR"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5g-wL-4Yc">
+                                                        <rect key="frame" x="171.5" y="0.0" width="163.5" height="24"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                                        <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                        <state key="normal" title="  Saturday" image="rectangle" catalog="system">
+                                                            <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="selected" image="checkmark.rectangle.fill" catalog="system">
+                                                            <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="SelectDays:" destination="AJT-SE-YCR" eventType="touchUpInside" id="td1-HE-PiY"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3Er-iy-6pw">
+                                                <rect key="frame" x="0.0" y="68" width="335" height="24"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zr9-zy-UmF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="24"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                                        <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                        <state key="normal" title="  Wednesday" image="rectangle" catalog="system">
+                                                            <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="selected" image="checkmark.rectangle.fill" catalog="system">
+                                                            <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="SelectDays:" destination="AJT-SE-YCR" eventType="touchUpInside" id="k3R-A4-cug"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hD-UN-xnJ">
+                                                        <rect key="frame" x="171.5" y="0.0" width="163.5" height="24"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                                        <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                        <state key="normal" title="  Sunday" image="rectangle" catalog="system">
+                                                            <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="selected" image="checkmark.rectangle.fill" catalog="system">
+                                                            <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="SelectDays:" destination="AJT-SE-YCR" eventType="touchUpInside" id="U2q-nU-dbf"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DL4-mm-HhI">
+                                                <rect key="frame" x="0.0" y="102" width="335" height="24"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Th1-FI-OzP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="24"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                                        <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                        <state key="normal" title="  Thursday" image="rectangle" catalog="system">
+                                                            <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="selected" image="checkmark.rectangle.fill" catalog="system">
+                                                            <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="SelectDays:" destination="AJT-SE-YCR" eventType="touchUpInside" id="ZvQ-uq-dwm"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2k-0E-DPg">
+                                                        <rect key="frame" x="171.5" y="0.0" width="163.5" height="24"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                                        <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                        <state key="normal" title="  Select All" image="rectangle" catalog="system">
+                                                            <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="selected" image="checkmark.rectangle.fill" catalog="system">
+                                                            <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="SelectDays:" destination="AJT-SE-YCR" eventType="touchUpInside" id="3D1-sE-eUI"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select reminder time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBv-p0-haJ">
+                                        <rect key="frame" x="20" y="297" width="178.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqP-r3-7yj">
+                                        <rect key="frame" x="20" y="523" width="335" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="Save:" destination="AJT-SE-YCR" eventType="touchUpInside" id="Gf4-23-bMD"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="DAB-Si-Oz8">
+                                        <rect key="frame" x="20" y="375" width="335" height="30"/>
+                                        <subviews>
+                                            <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="qjh-Cy-Gsb">
+                                                <rect key="frame" x="-2" y="0.0" width="156.5" height="31"/>
+                                                <connections>
+                                                    <action selector="TimeSelectorSlider:" destination="AJT-SE-YCR" eventType="valueChanged" id="NB9-pg-LCk"/>
+                                                </connections>
+                                            </slider>
+                                            <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="8j7-qI-NzG">
+                                                <rect key="frame" x="180.5" y="0.0" width="156.5" height="31"/>
+                                                <connections>
+                                                    <action selector="TimeSelectorSlider:" destination="AJT-SE-YCR" eventType="valueChanged" id="cDB-NI-5yd"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4N-rr-0Fm">
+                                        <rect key="frame" x="85.5" y="341" width="22" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected time(s) are displayed below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5A4-AF-R7v">
+                                        <rect key="frame" x="20" y="435" width="335" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiX-Ox-g0z">
+                                        <rect key="frame" x="20" y="473" width="335" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="mgn-wZ-nFB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdO-EM-abk">
+                                        <rect key="frame" x="266.5" y="341" width="25" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZF-3g-8QM">
+                                        <rect key="frame" x="218.5" y="291" width="67" height="36"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="8"/>
+                                        <state key="normal" title="Add time">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="AddTime:" destination="AJT-SE-YCR" eventType="touchUpInside" id="ftC-36-Ngf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="AkC-5p-OjE" firstAttribute="top" secondItem="XDS-ig-TnX" secondAttribute="top" constant="20" id="0LA-7E-sEj"/>
+                                    <constraint firstAttribute="trailing" secondItem="y1L-uz-z2x" secondAttribute="trailing" constant="15" id="3Nb-Pz-tEj"/>
+                                    <constraint firstItem="rdO-EM-abk" firstAttribute="centerX" secondItem="8j7-qI-NzG" secondAttribute="centerX" id="3dC-aX-Ov2"/>
+                                    <constraint firstItem="y1L-uz-z2x" firstAttribute="top" secondItem="AkC-5p-OjE" secondAttribute="bottom" constant="10" id="3kt-Oi-6Hn"/>
+                                    <constraint firstItem="s4N-rr-0Fm" firstAttribute="top" secondItem="FBv-p0-haJ" secondAttribute="bottom" constant="20" id="4uk-q0-fUT"/>
+                                    <constraint firstItem="5A4-AF-R7v" firstAttribute="top" secondItem="DAB-Si-Oz8" secondAttribute="bottom" constant="30" id="5Oi-KT-xez"/>
+                                    <constraint firstAttribute="trailing" secondItem="uX2-Bn-Yka" secondAttribute="trailing" constant="20" id="6wh-6J-Yhc"/>
+                                    <constraint firstAttribute="bottom" secondItem="lqP-r3-7yj" secondAttribute="bottom" constant="20" id="7W3-Nc-CUY"/>
+                                    <constraint firstItem="DAB-Si-Oz8" firstAttribute="top" secondItem="s4N-rr-0Fm" secondAttribute="bottom" constant="10" id="7hN-Ax-e3F"/>
+                                    <constraint firstItem="FBv-p0-haJ" firstAttribute="top" secondItem="04X-5f-BRy" secondAttribute="bottom" constant="20" id="EsX-p9-JnW"/>
+                                    <constraint firstItem="XiX-Ox-g0z" firstAttribute="top" secondItem="5A4-AF-R7v" secondAttribute="bottom" constant="20" id="GtL-FD-LOj"/>
+                                    <constraint firstAttribute="trailing" secondItem="DAB-Si-Oz8" secondAttribute="trailing" constant="20" id="HPb-1t-IeX"/>
+                                    <constraint firstItem="dZF-3g-8QM" firstAttribute="centerY" secondItem="FBv-p0-haJ" secondAttribute="centerY" id="IjY-pr-h7k"/>
+                                    <constraint firstItem="lqP-r3-7yj" firstAttribute="top" secondItem="XiX-Ox-g0z" secondAttribute="bottom" constant="20" id="Je5-Qx-qzF"/>
+                                    <constraint firstItem="uX2-Bn-Yka" firstAttribute="leading" secondItem="XDS-ig-TnX" secondAttribute="leading" constant="20" id="ON5-tN-qRU"/>
+                                    <constraint firstItem="AkC-5p-OjE" firstAttribute="leading" secondItem="XDS-ig-TnX" secondAttribute="leading" constant="20" id="Qtv-yL-UdO"/>
+                                    <constraint firstItem="dZF-3g-8QM" firstAttribute="leading" secondItem="FBv-p0-haJ" secondAttribute="trailing" constant="20" id="Rbc-gt-Q2d"/>
+                                    <constraint firstAttribute="trailing" secondItem="AkC-5p-OjE" secondAttribute="trailing" constant="20" id="UEj-5B-xZ0"/>
+                                    <constraint firstItem="rdO-EM-abk" firstAttribute="bottom" secondItem="s4N-rr-0Fm" secondAttribute="bottom" id="Yae-mr-w3b"/>
+                                    <constraint firstAttribute="trailing" secondItem="5A4-AF-R7v" secondAttribute="trailing" constant="20" id="Zot-OB-G1p"/>
+                                    <constraint firstItem="FBv-p0-haJ" firstAttribute="leading" secondItem="XDS-ig-TnX" secondAttribute="leading" constant="20" id="agj-Vg-ot5"/>
+                                    <constraint firstAttribute="trailing" secondItem="XiX-Ox-g0z" secondAttribute="trailing" constant="20" id="btq-ho-z7P"/>
+                                    <constraint firstItem="y1L-uz-z2x" firstAttribute="leading" secondItem="XDS-ig-TnX" secondAttribute="leading" constant="15" id="d8F-dn-5b6"/>
+                                    <constraint firstItem="5A4-AF-R7v" firstAttribute="leading" secondItem="XDS-ig-TnX" secondAttribute="leading" constant="20" id="dHf-Z5-fzJ"/>
+                                    <constraint firstItem="lqP-r3-7yj" firstAttribute="leading" secondItem="XDS-ig-TnX" secondAttribute="leading" constant="20" id="gtN-lF-BOD"/>
+                                    <constraint firstAttribute="trailing" secondItem="04X-5f-BRy" secondAttribute="trailing" constant="20" id="oVi-ZS-vXz"/>
+                                    <constraint firstItem="XiX-Ox-g0z" firstAttribute="leading" secondItem="XDS-ig-TnX" secondAttribute="leading" constant="20" id="oce-Td-XvC"/>
+                                    <constraint firstAttribute="trailing" secondItem="lqP-r3-7yj" secondAttribute="trailing" constant="20" id="oqy-5c-1G3"/>
+                                    <constraint firstItem="uX2-Bn-Yka" firstAttribute="top" secondItem="y1L-uz-z2x" secondAttribute="bottom" constant="30" id="qhu-uD-tvT"/>
+                                    <constraint firstItem="s4N-rr-0Fm" firstAttribute="centerX" secondItem="qjh-Cy-Gsb" secondAttribute="centerX" id="sXk-z3-drp"/>
+                                    <constraint firstItem="rdO-EM-abk" firstAttribute="centerY" secondItem="s4N-rr-0Fm" secondAttribute="centerY" id="tYV-I3-lLw"/>
+                                    <constraint firstItem="04X-5f-BRy" firstAttribute="top" secondItem="uX2-Bn-Yka" secondAttribute="bottom" constant="15" id="vyY-Ik-VD8"/>
+                                    <constraint firstItem="DAB-Si-Oz8" firstAttribute="leading" secondItem="XDS-ig-TnX" secondAttribute="leading" constant="20" id="xtp-MD-kGX"/>
+                                    <constraint firstItem="04X-5f-BRy" firstAttribute="leading" secondItem="XDS-ig-TnX" secondAttribute="leading" constant="20" id="yzs-7z-UJt"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="XDS-ig-TnX" firstAttribute="leading" secondItem="SGz-bg-RUJ" secondAttribute="leading" id="8C1-Fu-fiv"/>
+                            <constraint firstItem="XDS-ig-TnX" firstAttribute="width" secondItem="5RQ-uQ-mwH" secondAttribute="width" id="8i4-Ed-EXL"/>
+                            <constraint firstItem="XDS-ig-TnX" firstAttribute="centerX" secondItem="SGz-bg-RUJ" secondAttribute="centerX" id="GAN-3M-lUC"/>
+                            <constraint firstItem="XDS-ig-TnX" firstAttribute="top" secondItem="5RQ-uQ-mwH" secondAttribute="top" id="JAk-hY-7hB"/>
+                            <constraint firstItem="XDS-ig-TnX" firstAttribute="bottom" secondItem="SGz-bg-RUJ" secondAttribute="bottom" id="oaS-kx-e9N"/>
+                            <constraint firstItem="XDS-ig-TnX" firstAttribute="trailing" secondItem="SGz-bg-RUJ" secondAttribute="trailing" id="tAd-Ix-r5s"/>
+                            <constraint firstItem="AkC-5p-OjE" firstAttribute="centerX" secondItem="SGz-bg-RUJ" secondAttribute="centerX" id="wZf-xU-JNb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SGz-bg-RUJ"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" title="Create" largeTitleDisplayMode="never" id="C9b-rA-NYi"/>
+                    <connections>
+                        <outlet property="EnterMediName" destination="y1L-uz-z2x" id="ytR-p3-Iws"/>
+                        <outlet property="HourTime" destination="s4N-rr-0Fm" id="kWf-3G-ckV"/>
+                        <outlet property="MinuteTime" destination="rdO-EM-abk" id="DX8-Cy-HfL"/>
+                        <outlet property="Time2" destination="XiX-Ox-g0z" id="K36-b4-PxR"/>
+                        <outletCollection property="btnArray" destination="TcC-fI-LWq" collectionClass="NSMutableArray" id="HuC-s8-dhQ"/>
+                        <outletCollection property="btnArray" destination="8hW-KH-io5" collectionClass="NSMutableArray" id="Kg5-UQ-UAv"/>
+                        <outletCollection property="btnArray" destination="zr9-zy-UmF" collectionClass="NSMutableArray" id="uwS-XB-Mvy"/>
+                        <outletCollection property="btnArray" destination="Th1-FI-OzP" collectionClass="NSMutableArray" id="RBa-kA-iCO"/>
+                        <outletCollection property="btnArray" destination="QPz-Ll-5h5" collectionClass="NSMutableArray" id="Lyc-IQ-y1Z"/>
+                        <outletCollection property="btnArray" destination="R5g-wL-4Yc" collectionClass="NSMutableArray" id="z8H-P2-pXR"/>
+                        <outletCollection property="btnArray" destination="1hD-UN-xnJ" collectionClass="NSMutableArray" id="b7e-Ba-Ql5"/>
+                        <outletCollection property="btnArray" destination="K2k-0E-DPg" collectionClass="NSMutableArray" id="bC5-gA-ut1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzy-Bq-rZX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2712" y="118"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="11b-dz-o5v">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rfJ-jn-59b" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="n5d-fk-mew">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Sr-aW-c4B">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="iyf-mF-0P9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="73k-QB-sZb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="117"/>
+        </scene>
+        <!--Medi Details View Controller-->
+        <scene sceneID="cFf-Qf-Vou">
+            <objects>
+                <viewController providesPresentationContextTransitionStyle="YES" id="QKL-8k-1sm" customClass="mediDetailsViewController" customModule="MediReminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xkf-me-bA4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8c-vr-zfv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Medication Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyH-BJ-DEa">
+                                        <rect key="frame" x="20" y="20" width="335" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="djt-Wm-Y9T">
+                                        <rect key="frame" x="15" y="48" width="345" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="QKL-8k-1sm" id="qKc-7L-BvP"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Days of Week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1t-vA-wa2">
+                                        <rect key="frame" x="20" y="112" width="335" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LMW-wv-gOo">
+                                        <rect key="frame" x="20" y="151" width="335" height="282"/>
+                                        <subviews>
+                                            <button opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fs4-Ls-hGz">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="36"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                                <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                <state key="normal" title="  Monday">
+                                                    <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="SelectDays:" destination="QKL-8k-1sm" eventType="touchUpInside" id="6gg-GP-KI8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVc-k4-baW">
+                                                <rect key="frame" x="0.0" y="41" width="335" height="36"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                                <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                <state key="normal" title="  Tuesday">
+                                                    <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="SelectDays:" destination="QKL-8k-1sm" eventType="touchUpInside" id="9bY-hh-vOx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIj-Ko-yLa">
+                                                <rect key="frame" x="0.0" y="82" width="335" height="36"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                                <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                <state key="normal" title="  Wednesday">
+                                                    <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="SelectDays:" destination="QKL-8k-1sm" eventType="touchUpInside" id="Ojx-m0-zbH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RyD-a0-P0F">
+                                                <rect key="frame" x="0.0" y="123" width="335" height="36"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                                <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                <state key="normal" title="  Thursday">
+                                                    <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="SelectDays:" destination="QKL-8k-1sm" eventType="touchUpInside" id="vhW-Qi-SeK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHF-bw-814">
+                                                <rect key="frame" x="0.0" y="164" width="335" height="36"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                                <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                <state key="normal" title="  Friday">
+                                                    <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="SelectDays:" destination="QKL-8k-1sm" eventType="touchUpInside" id="8Im-QZ-0qf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rtj-Iw-ryV">
+                                                <rect key="frame" x="0.0" y="205" width="335" height="36"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                                <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                <state key="normal" title="  Saturday">
+                                                    <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="SelectDays:" destination="QKL-8k-1sm" eventType="touchUpInside" id="YvS-XF-3Jj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9a-xG-KfG">
+                                                <rect key="frame" x="0.0" y="246" width="335" height="36"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                                <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                <state key="normal" title="  Sunday">
+                                                    <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="SelectDays:" destination="QKL-8k-1sm" eventType="touchUpInside" id="9Jy-7l-TBQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected time(s) are displayed below" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPZ-KO-KEh">
+                                        <rect key="frame" x="20" y="483" width="335" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhr-nG-q3s">
+                                        <rect key="frame" x="20" y="521" width="335" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="qiy-hS-vi3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="E1t-vA-wa2" secondAttribute="trailing" constant="20" id="4cN-2p-Q80"/>
+                                    <constraint firstItem="OPZ-KO-KEh" firstAttribute="top" secondItem="LMW-wv-gOo" secondAttribute="bottom" constant="50" id="Bkn-bJ-x5q"/>
+                                    <constraint firstItem="LMW-wv-gOo" firstAttribute="top" secondItem="E1t-vA-wa2" secondAttribute="bottom" constant="15" id="BvK-Wp-YYM"/>
+                                    <constraint firstItem="djt-Wm-Y9T" firstAttribute="leading" secondItem="d8c-vr-zfv" secondAttribute="leading" constant="15" id="FjS-Mz-Fui"/>
+                                    <constraint firstAttribute="trailing" secondItem="LMW-wv-gOo" secondAttribute="trailing" constant="20" id="HLy-1N-Q9e"/>
+                                    <constraint firstItem="uyH-BJ-DEa" firstAttribute="top" secondItem="d8c-vr-zfv" secondAttribute="top" constant="20" id="IhS-xW-541"/>
+                                    <constraint firstItem="LMW-wv-gOo" firstAttribute="leading" secondItem="d8c-vr-zfv" secondAttribute="leading" constant="20" id="Lmb-J6-zzU"/>
+                                    <constraint firstAttribute="trailing" secondItem="uyH-BJ-DEa" secondAttribute="trailing" constant="20" id="NmF-Zw-coL"/>
+                                    <constraint firstItem="E1t-vA-wa2" firstAttribute="top" secondItem="djt-Wm-Y9T" secondAttribute="bottom" constant="30" id="RPw-J5-zxh"/>
+                                    <constraint firstItem="mhr-nG-q3s" firstAttribute="leading" secondItem="d8c-vr-zfv" secondAttribute="leading" constant="20" id="Xij-mi-YI6"/>
+                                    <constraint firstAttribute="trailing" secondItem="djt-Wm-Y9T" secondAttribute="trailing" constant="15" id="ZbX-9X-X9r"/>
+                                    <constraint firstAttribute="trailing" secondItem="mhr-nG-q3s" secondAttribute="trailing" constant="20" id="ZrK-Ru-Sne"/>
+                                    <constraint firstItem="E1t-vA-wa2" firstAttribute="leading" secondItem="d8c-vr-zfv" secondAttribute="leading" constant="20" id="bXf-Fo-EmK"/>
+                                    <constraint firstItem="uyH-BJ-DEa" firstAttribute="leading" secondItem="d8c-vr-zfv" secondAttribute="leading" constant="20" id="c3I-pG-YGP"/>
+                                    <constraint firstItem="mhr-nG-q3s" firstAttribute="top" secondItem="OPZ-KO-KEh" secondAttribute="bottom" constant="20" id="hMu-TA-tGQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="mhr-nG-q3s" secondAttribute="bottom" constant="20" id="kGE-yg-2Zc"/>
+                                    <constraint firstItem="OPZ-KO-KEh" firstAttribute="leading" secondItem="d8c-vr-zfv" secondAttribute="leading" constant="20" id="nwv-cr-7af"/>
+                                    <constraint firstAttribute="trailing" secondItem="OPZ-KO-KEh" secondAttribute="trailing" constant="20" id="pqu-Gz-HJn"/>
+                                    <constraint firstItem="djt-Wm-Y9T" firstAttribute="top" secondItem="uyH-BJ-DEa" secondAttribute="bottom" constant="10" id="zfl-cD-G6b"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="d8c-vr-zfv" firstAttribute="bottom" secondItem="8Zf-uQ-gsN" secondAttribute="bottom" id="5cQ-OL-sqX"/>
+                            <constraint firstItem="d8c-vr-zfv" firstAttribute="top" secondItem="Xkf-me-bA4" secondAttribute="top" id="Fqr-83-Lqd"/>
+                            <constraint firstItem="d8c-vr-zfv" firstAttribute="trailing" secondItem="8Zf-uQ-gsN" secondAttribute="trailing" id="NEP-vy-bSd"/>
+                            <constraint firstItem="d8c-vr-zfv" firstAttribute="width" secondItem="Xkf-me-bA4" secondAttribute="width" id="ZKc-wB-fiy"/>
+                            <constraint firstItem="uyH-BJ-DEa" firstAttribute="centerX" secondItem="8Zf-uQ-gsN" secondAttribute="centerX" id="smt-QX-vkd"/>
+                            <constraint firstItem="d8c-vr-zfv" firstAttribute="centerX" secondItem="8Zf-uQ-gsN" secondAttribute="centerX" id="uRR-dh-Rqw"/>
+                            <constraint firstItem="d8c-vr-zfv" firstAttribute="leading" secondItem="8Zf-uQ-gsN" secondAttribute="leading" id="zd1-sg-VAO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8Zf-uQ-gsN"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="ugf-Rk-NaB"/>
+                    <connections>
+                        <outlet property="EnterMediName" destination="djt-Wm-Y9T" id="Nqk-ea-03i"/>
+                        <outlet property="Time2" destination="mhr-nG-q3s" id="E08-WV-Get"/>
+                        <outletCollection property="btnArray" destination="fs4-Ls-hGz" collectionClass="NSMutableArray" id="q6v-u0-M53"/>
+                        <outletCollection property="btnArray" destination="fVc-k4-baW" collectionClass="NSMutableArray" id="yuy-XN-Tu0"/>
+                        <outletCollection property="btnArray" destination="IIj-Ko-yLa" collectionClass="NSMutableArray" id="VUw-Og-8Br"/>
+                        <outletCollection property="btnArray" destination="RyD-a0-P0F" collectionClass="NSMutableArray" id="EZL-k4-tOk"/>
+                        <outletCollection property="btnArray" destination="QHF-bw-814" collectionClass="NSMutableArray" id="Hwx-cW-aVs"/>
+                        <outletCollection property="btnArray" destination="Rtj-Iw-ryV" collectionClass="NSMutableArray" id="FBJ-dZ-q3K"/>
+                        <outletCollection property="btnArray" destination="U9a-xG-KfG" collectionClass="NSMutableArray" id="kLe-kB-Qqz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lsd-9I-4BT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1871" y="842"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkmark.rectangle.fill" catalog="system" width="128" height="93"/>
+        <image name="medicine" width="512" height="311"/>
+        <image name="rectangle" catalog="system" width="128" height="93"/>
+    </resources>
+</document>
