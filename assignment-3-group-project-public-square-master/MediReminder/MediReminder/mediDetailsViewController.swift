@@ -2,7 +2,7 @@
 //  mediDetailsViewController.swift
 //  MediReminder
 //
-//  Created by vivek's mac on 11/06/20.
+//  Created by Dhruva's mac on 11/06/20.
 //  Copyright © 2020 Rezaul Karim. All rights reserved.
 //
 
